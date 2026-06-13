@@ -1,4 +1,4 @@
-## Hi there 👋```react
+https://g.co/gemini/share/27341240926e## Hi there 👋```react
 import React, { useState, useEffect } from 'react';
 
 // --- ROBUST INLINE SVG ICONS (Guarantees zero dependency compile issues) ---
