@@ -1,0 +1,293 @@
+```html
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anand Sagar • Royal Gold & Brown Suite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #d4af37;
+            --brown-deep: #120c08;
+            --brown-card: #1c130d;
+            --brown-light: #2a1d14;
+            --teal: #105c66;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--brown-deep);
+            color: #ebdcd0;
+            overflow-x: hidden;
+        }
+        
+        .serif-font { font-family: 'Cinzel', serif; }
+        .text-gold { color: var(--gold); }
+        .bg-gold { background-color: var(--gold); }
+        .border-gold { border-color: var(--gold); }
+        .bg-card { background-color: var(--brown-card); }
+
+        /* Highly optimized scrollbar for the top nav */
+        .hide-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Voice note animation */
+        .wave-bar {
+            width: 3px;
+            background-color: var(--gold);
+            border-radius: 10px;
+            animation: bounceWave 0.8s ease-in-out infinite alternate;
+            display: inline-block;
+        }
+        @keyframes bounceWave {
+            0% { height: 4px; }
+            100% { height: 16px; }
+        }
+
+        /* Fast hover transitions */
+        .fast-trans {
+            transition: all 0.2s ease-in-out;
+        }
+    </style>
+</head>
+<body class="relative selection:bg-[#d4af37] selection:text-black">
+
+    <!-- Top Golden Accent Line -->
+    <div class="h-1 w-full bg-gradient-to-r from-[#5c3a21] via-[#d4af37] to-[#105c66] fixed top-0 z-50"></div>
+
+    <!-- 1. MAIN HEADER (Sticky with 3-dot menu) -->
+    <header class="w-full bg-[#120c08] border-b border-stone-800/80 px-4 md:px-6 py-4 flex items-center justify-between sticky top-[4px] z-40">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full border border-gold flex items-center justify-center bg-stone-950 shrink-0">
+                <span class="serif-font text-lg font-bold text-gold">AS</span>
+            </div>
+            <div>
+                <h1 class="serif-font text-lg md:text-xl font-bold text-white tracking-widest flex items-center gap-2">
+                    Anand Sagar <span class="hidden md:inline-block text-[9px] text-[#2cd4d9] font-sans uppercase px-1.5 py-0.5 rounded bg-[#105c66]/40 border border-[#105c66]/30">Gold Suite</span>
+                </h1>
+                <p class="text-[9px] uppercase tracking-[0.2em] text-stone-500">Luxury Dining • Ghaziabad</p>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+            <a href="tel:08800434366" class="hidden md:flex bg-gold hover:opacity-90 text-black font-bold text-[10px] tracking-wider uppercase px-4 py-2.5 rounded-lg fast-trans items-center gap-2">
+                <i class="fa-solid fa-phone"></i> Concierge
+            </a>
+
+            <!-- Three-Dot Corner Settings Menu -->
+            <div class="relative">
+                <button onclick="toggleMenu()" id="menu-btn" class="w-10 h-10 rounded-xl border border-stone-800 hover:border-gold/50 bg-[#1c130d] flex items-center justify-center text-stone-300 fast-trans">
+                    <i class="fa-solid fa-ellipsis-vertical text-lg"></i>
+                </button>
+                
+                <!-- Dropdown -->
+                <div id="corner-menu" class="absolute right-0 mt-2 w-56 bg-[#1c130d] border border-[#d4af37]/40 rounded-xl shadow-2xl overflow-hidden hidden z-50">
+                    <div class="p-3 bg-[#120c08] border-b border-stone-800/80 text-center">
+                        <span class="text-[10px] uppercase tracking-widest text-[#d4af37] font-bold">Menu & Settings</span>
+                    </div>
+                    <ul class="py-2 text-xs text-stone-300 font-medium">
+                        <li><a href="#section-academy" onclick="toggleMenu()" class="block px-4 py-2.5 hover:bg-[#2a1d14] hover:text-white"><i class="fa-solid fa-graduation-cap w-5 text-gold"></i> About Academy</a></li>
+                        <li><a href="#section-menu" onclick="toggleMenu()" class="block px-4 py-2.5 hover:bg-[#2a1d14] hover:text-white"><i class="fa-solid fa-utensils w-5 text-gold"></i> View Menu</a></li>
+                        <li><a href="#section-vip" onclick="toggleMenu()" class="block px-4 py-2.5 hover:bg-[#2a1d14] hover:text-white"><i class="fa-solid fa-crown w-5 text-gold"></i> VIP Booking</a></li>
+                        <li><a href="#section-contact" onclick="toggleMenu()" class="block px-4 py-2.5 hover:bg-[#2a1d14] hover:text-white"><i class="fa-solid fa-map-location-dot w-5 text-[#2cd4d9]"></i> Location & Contact</a></li>
+                        <li class="border-t border-stone-800/80 my-1"></li>
+                        <li><a href="tel:08800434366" class="block px-4 py-2.5 hover:bg-[#2a1d14] text-[#d4af37]"><i class="fa-solid fa-phone w-5"></i> Call Support</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. TOP SCROLL NAVIGATION BAR -->
+    <nav class="w-full bg-[#17100b] border-b border-stone-800/60 sticky top-[77px] z-30 shadow-md">
+        <div class="max-w-5xl mx-auto px-4 py-2.5 flex items-center gap-2 overflow-x-auto hide-scroll snap-x">
+            <a href="#section-home" class="snap-start px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider whitespace-nowrap bg-gold text-black border border-gold fast-trans">1. Welcome</a>
+            <a href="#section-academy" class="snap-start px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider whitespace-nowrap bg-[#1c130d] text-stone-400 border border-stone-800 hover:border-gold/50 hover:text-white fast-trans">2. Academy</a>
+            <a href="#section-menu" class="snap-start px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider whitespace-nowrap bg-[#1c130d] text-stone-400 border border-stone-800 hover:border-gold/50 hover:text-white fast-trans">3. Menu</a>
+            <a href="#section-heritage" class="snap-start px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider whitespace-nowrap bg-[#1c130d] text-stone-400 border border-stone-800 hover:border-gold/50 hover:text-white fast-trans">4. Heritage</a>
+            <a href="#section-vip" class="snap-start px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider whitespace-nowrap bg-[#1c130d] text-stone-400 border border-stone-800 hover:border-gold/50 hover:text-white fast-trans">5. VIP Lounge</a>
+            <a href="#section-reviews" class="snap-start px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider whitespace-nowrap bg-[#1c130d] text-stone-400 border border-stone-800 hover:border-gold/50 hover:text-white fast-trans">6. Reviews</a>
+            <a href="#section-kitchen" class="snap-start px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider whitespace-nowrap bg-[#1c130d] text-stone-400 border border-stone-800 hover:border-gold/50 hover:text-white fast-trans">7. Kitchen Audits</a>
+            <a href="#section-boutique" class="snap-start px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider whitespace-nowrap bg-[#1c130d] text-stone-400 border border-stone-800 hover:border-gold/50 hover:text-white fast-trans">8. Gifting</a>
+        </div>
+    </nav>
+
+    <!-- MAIN VERTICAL SCROLL CONTENT -->
+    <main class="max-w-4xl w-full mx-auto px-5 py-8 space-y-20 pb-32">
+
+        <!-- Section 1: Welcome -->
+        <section id="section-home" class="scroll-mt-32">
+            <div class="p-8 md:p-10 rounded-3xl bg-gradient-to-br from-[#1c130d] to-[#120c08] border border-[#d4af37]/20 shadow-xl flex flex-col md:flex-row items-center gap-8">
+                <div class="flex-1 space-y-5 text-center md:text-left">
+                    <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-gold border border-gold/30 px-3 py-1 rounded-full">Est. Ghaziabad</span>
+                    <h2 class="serif-font text-3xl md:text-5xl font-bold text-white leading-tight mt-2">Where Legacy Meets <br><span class="italic text-gold">Elite Taste</span></h2>
+                    <p class="text-xs md:text-sm text-stone-400 leading-relaxed">
+                        Welcome to the digital command center of Anand Sagar Restaurant. Scroll down to explore our luxury menu, sweet academy, and VIP services.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-3 pt-2 justify-center md:justify-start">
+                        <a href="#section-menu" class="px-6 py-3 rounded-lg bg-gold text-black font-bold text-xs uppercase tracking-wider text-center">Explore Menu</a>
+                        <a href="#section-vip" class="px-6 py-3 rounded-lg border border-[#105c66] text-[#2cd4d9] font-bold text-xs uppercase tracking-wider text-center hover:bg-[#105c66]/20">VIP Booking</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Academy -->
+        <section id="section-academy" class="scroll-mt-32 space-y-6">
+            <div class="space-y-1">
+                <span class="text-[10px] font-bold text-[#2cd4d9] tracking-widest uppercase">The Sweet Masterclass</span>
+                <h2 class="serif-font text-2xl md:text-3xl text-white font-bold">Mithai & Sweet Academy</h2>
+                <div class="w-12 h-1 bg-gold mt-2"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-card p-5 rounded-2xl border border-stone-800/80 hover:border-gold/30 fast-trans">
+                    <i class="fa-solid fa-graduation-cap text-2xl text-[#2cd4d9] mb-3"></i>
+                    <h3 class="text-white font-bold text-sm mb-1">Heritage Motichoor Artistry</h3>
+                    <p class="text-[11px] text-stone-400 leading-relaxed">Study the traditional method of frying pure chickpea-flour pearls, and balancing golden sugar syrups.</p>
+                </div>
+                <div class="bg-card p-5 rounded-2xl border border-stone-800/80 hover:border-gold/30 fast-trans">
+                    <i class="fa-solid fa-wand-magic-sparkles text-2xl text-[#2cd4d9] mb-3"></i>
+                    <h3 class="text-white font-bold text-sm mb-1">Kaju Katli Engineering</h3>
+                    <p class="text-[11px] text-stone-400 leading-relaxed">Understanding temperature controls when cooking pure silver-leafed luxury cashew-paste layers.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Royal Menu -->
+        <section id="section-menu" class="scroll-mt-32 space-y-6">
+            <div class="space-y-1">
+                <span class="text-[10px] font-bold text-gold tracking-widest uppercase">Gastronomy Experience</span>
+                <h2 class="serif-font text-2xl md:text-3xl text-white font-bold">The Royal Dining Menu</h2>
+                <div class="w-12 h-1 bg-[#105c66] mt-2"></div>
+            </div>
+
+            <div class="grid grid-cols-1 gap-3">
+                <div class="p-4 bg-card rounded-xl border border-stone-800/80 flex justify-between items-center">
+                    <div>
+                        <h4 class="text-white font-bold text-sm">Signature Royal Shahi Paneer</h4>
+                        <p class="text-[10px] text-stone-400 mt-0.5">Cooked in rich golden cashew cream sauce with fresh saffron.</p>
+                    </div>
+                    <span class="text-gold font-bold text-sm border border-gold/20 px-2 py-1 rounded bg-gold/10">₹380</span>
+                </div>
+                <div class="p-4 bg-card rounded-xl border border-stone-800/80 flex justify-between items-center">
+                    <div>
+                        <h4 class="text-white font-bold text-sm">Tandoori Butter Naan</h4>
+                        <p class="text-[10px] text-stone-400 mt-0.5">Extra soft, baked inside charcoal clay pots.</p>
+                    </div>
+                    <span class="text-gold font-bold text-sm border border-gold/20 px-2 py-1 rounded bg-gold/10">₹120</span>
+                </div>
+                <div class="p-4 bg-card rounded-xl border border-stone-800/80 flex justify-between items-center">
+                    <div>
+                        <h4 class="text-white font-bold text-sm">Wok Pan Street Noodles</h4>
+                        <p class="text-[10px] text-stone-400 mt-0.5">Tossed with crisp cabbage, chili, and royal herbs.</p>
+                    </div>
+                    <span class="text-gold font-bold text-sm border border-gold/20 px-2 py-1 rounded bg-gold/10">₹240</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Heritage -->
+        <section id="section-heritage" class="scroll-mt-32 space-y-6">
+            <div class="space-y-1">
+                <span class="text-[10px] font-bold text-gold tracking-widest uppercase">The Ghaziabad Story</span>
+                <h2 class="serif-font text-2xl md:text-3xl text-white font-bold">Our Royal Heritage</h2>
+                <div class="w-12 h-1 bg-gold mt-2"></div>
+            </div>
+            <div class="p-6 bg-card border border-stone-800/80 rounded-2xl text-xs leading-loose text-stone-300">
+                <p class="mb-3">
+                    Anand Sagar was founded on the basic principle of absolute culinary purity. Nestled within the heart of Nandgram, Ghaziabad, we began as a simple family kitchen aiming to serve genuine traditional Indian sweets without synthetic preserves.
+                </p>
+                <p>
+                    Today, our brand stands synonymous with authentic fine dining, soft golden tandoori breads, and sweets that bring nostalgic celebration joy to households.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 5: VIP Lounge Booking -->
+        <section id="section-vip" class="scroll-mt-32 space-y-6">
+            <div class="space-y-1">
+                <span class="text-[10px] font-bold text-[#2cd4d9] tracking-widest uppercase">Elite Seating</span>
+                <h2 class="serif-font text-2xl md:text-3xl text-white font-bold">VIP Dining Booking</h2>
+                <div class="w-12 h-1 bg-[#105c66] mt-2"></div>
+            </div>
+            <div class="p-5 md:p-6 rounded-2xl bg-gradient-to-b from-[#1c130d] to-[#120c08] border border-stone-800 space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <input id="vip-name" type="text" placeholder="Your Name" class="w-full bg-[#120c08] border border-stone-700 rounded-lg px-4 py-2.5 text-xs text-white focus:outline-none focus:border-gold">
+                    <input id="vip-guests" type="number" placeholder="Number of Guests" class="w-full bg-[#120c08] border border-stone-700 rounded-lg px-4 py-2.5 text-xs text-white focus:outline-none focus:border-gold">
+                </div>
+                <button onclick="bookVIP()" class="w-full py-3 bg-gold hover:opacity-90 text-black font-bold text-xs uppercase tracking-wider rounded-lg shadow-md fast-trans">Confirm Priority Seating</button>
+                <p id="vip-msg" class="text-[10px] text-emerald-400 font-bold hidden text-center mt-2"></p>
+            </div>
+        </section>
+
+        <!-- Section 6: Patrons Reviews -->
+        <section id="section-reviews" class="scroll-mt-32 space-y-6">
+            <div class="space-y-1">
+                <span class="text-[10px] font-bold text-gold tracking-widest uppercase">Verified Logs</span>
+                <h2 class="serif-font text-2xl md:text-3xl text-white font-bold">What Patrons Say</h2>
+                <div class="w-12 h-1 bg-gold mt-2"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="p-5 bg-card rounded-2xl border border-stone-800">
+                    <span class="text-gold font-bold text-[10px] tracking-widest mb-1 block">★★★★★ • GHAZIABAD LOCAL</span>
+                    <p class="text-xs text-stone-300 italic">"The paneer is absolutely phenomenal. Sweets are so authentic. Perfect comfort family lounge atmosphere."</p>
+                </div>
+                <div class="p-5 bg-card rounded-2xl border border-stone-800">
+                    <span class="text-gold font-bold text-[10px] tracking-widest mb-1 block">★★★★★ • NANDGRAM RESIDENT</span>
+                    <p class="text-xs text-stone-300 italic">"Sweets tastes fresh and authentic. Food is served hot. The noodles dance on your tongue like a 5-star kitchen!"</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Live Kitchen Audits -->
+        <section id="section-kitchen" class="scroll-mt-32 space-y-6">
+            <div class="space-y-1">
+                <span class="text-[10px] font-bold text-[#2cd4d9] tracking-widest uppercase">Sanitary Telemetry</span>
+                <h2 class="serif-font text-2xl md:text-3xl text-white font-bold">Live Kitchen Quality</h2>
+                <div class="w-12 h-1 bg-[#105c66] mt-2"></div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-center">
+                <div class="bg-card p-4 rounded-xl border border-stone-800">
+                    <span class="text-stone-500 text-[9px] uppercase tracking-wider block mb-1">Chutney</span>
+                    <span class="text-emerald-400 text-sm font-bold">100% Fresh</span>
+                </div>
+                <div class="bg-card p-4 rounded-xl border border-stone-800">
+                    <span class="text-stone-500 text-[9px] uppercase tracking-wider block mb-1">Tandoor Temp</span>
+                    <span class="text-gold text-sm font-bold">425°C Active</span>
+                </div>
+                <div class="bg-card p-4 rounded-xl border border-stone-800">
+                    <span class="text-stone-500 text-[9px] uppercase tracking-wider block mb-1">Ghee Purity</span>
+                    <span class="text-emerald-400 text-sm font-bold">Grade-A</span>
+                </div>
+                <div class="bg-card p-4 rounded-xl border border-stone-800">
+                    <span class="text-stone-500 text-[9px] uppercase tracking-wider block mb-1">Front Desk</span>
+                    <span class="text-[#2cd4d9] text-sm font-bold">Polite Mode</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 8: Gifting Boutique -->
+        <section id="section-boutique" class="scroll-mt-32 space-y-6">
+            <div class="space-y-1">
+                <span class="text-[10px] font-bold text-gold tracking-widest uppercase">Heritage Gifting</span>
+                <h2 class="serif-font text-2xl md:text-3xl text-white font-bold">Sweets Boutique</h2>
+                <div class="w-12 h-1 bg-gold mt-2"></div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="p-5 bg-card rounded-2xl border border-stone-800 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-white font-bold text-sm mb-1">Imperial Gold Tray (1kg)</h3>
+                        <p class="text-[11px] text-stone-400 mb-2">Assortment of Kaju Katli, Moti Ladoo, and Pista rolls.</p>
+                        <span class="text-gold font-bold text-xs block mb-3">₹1,100</span>
+                    </div>
+            
